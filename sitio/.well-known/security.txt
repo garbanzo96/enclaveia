@@ -1,0 +1,4 @@
+Contact: mailto:hola@enclaveia.cl
+Expires: 2027-10-07T00:00:00.000Z
+Preferred-Languages: es, en
+Canonical: https://enclaveia.cl/.well-known/security.txt
