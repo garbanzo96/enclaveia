@@ -4,6 +4,14 @@ Sitio de [enclaveia.cl](https://enclaveia.cl). Enclave IA es una marca de Synesi
 
 Es un sitio estático: HTML, CSS y un archivo de JavaScript opcional. No tiene dependencias ni paso de compilación, y funciona aunque el JavaScript esté desactivado.
 
+## Ver la página
+
+- **Vista previa:** [claude.ai/artifact/QmQ8STRHf3LehfbTnKZfyr](https://claude.ai/artifact/QmQ8STRHf3LehfbTnKZfyr). Es privada; para que otros socios la abran hay que compartirla desde el menú *Share* de la página.
+- **GitHub Pages:** [garbanzo96.github.io/enclaveia](https://garbanzo96.github.io/enclaveia/). Funciona cuando el repositorio sea público y en *Settings → Pages → Source* se elija **GitHub Actions**. Desde ahí, cada push a `main` se publica solo (`.github/workflows/pages.yml`). Con el repositorio privado, el flujo se omite y el enlace no abre.
+- **En su computador:** `cd sitio && python3 -m http.server 8000` y abrir [http://localhost:8000](http://localhost:8000).
+
+Las rutas internas son relativas, así que el sitio funciona igual en enclaveia.cl, en una subcarpeta de GitHub Pages o en local.
+
 ## Estructura
 
 | Carpeta o archivo | Qué contiene |
@@ -28,7 +36,7 @@ Es un sitio estático: HTML, CSS y un archivo de JavaScript opcional. No tiene d
 4. En **Custom domains**, agregar `enclaveia.cl` y `www.enclaveia.cl`. En NIC Chile, apuntar el dominio a los servidores de nombres que indique Cloudflare.
 5. Redirigir `www.enclaveia.cl` a `enclaveia.cl`.
 
-Cloudflare Pages sirve `/privacidad` desde `privacidad.html` sin la extensión. Al probar en local con un servidor simple, abra `privacidad.html` con la extensión.
+Los enlaces internos apuntan a archivos `.html`; Cloudflare Pages los redirige a la dirección sin extensión.
 
 ## Antes de publicar
 
