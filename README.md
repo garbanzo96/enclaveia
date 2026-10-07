@@ -1,13 +1,14 @@
 # Enclave IA · sitio web
 
+**[Abrir la página en el navegador](https://garbanzo96.github.io/enclaveia/)** · [versión en inglés](https://garbanzo96.github.io/enclaveia/en/)
+
 Sitio de [enclaveia.cl](https://enclaveia.cl). Enclave IA es una marca de Synesis Lab SpA.
 
 Es un sitio estático: HTML, CSS y un archivo de JavaScript opcional. No tiene dependencias ni paso de compilación, y funciona aunque el JavaScript esté desactivado.
 
 ## Ver la página
 
-- **Vista previa:** [claude.ai/artifact/QmQ8STRHf3LehfbTnKZfyr](https://claude.ai/artifact/QmQ8STRHf3LehfbTnKZfyr). Es privada; para que otros socios la abran hay que compartirla desde el menú *Share* de la página.
-- **GitHub Pages:** [garbanzo96.github.io/enclaveia](https://garbanzo96.github.io/enclaveia/). Funciona cuando el repositorio sea público y en *Settings → Pages → Source* se elija **GitHub Actions**. Desde ahí, cada push a `main` se publica solo (`.github/workflows/pages.yml`). Con el repositorio privado, el flujo se omite y el enlace no abre.
+- **GitHub Pages:** [garbanzo96.github.io/enclaveia](https://garbanzo96.github.io/enclaveia/). Cada push a `main` se publica solo en uno o dos minutos (`.github/workflows/pages.yml`). Requiere que en *Settings → Pages → Source* esté elegido **GitHub Actions**.
 - **En su computador:** `cd sitio && python3 -m http.server 8000` y abrir [http://localhost:8000](http://localhost:8000).
 
 Las rutas internas son relativas, así que el sitio funciona igual en enclaveia.cl, en una subcarpeta de GitHub Pages o en local.
