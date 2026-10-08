@@ -41,7 +41,6 @@ Los enlaces internos apuntan a archivos `.html`; Cloudflare Pages los redirige a
 
 ## Antes de publicar
 
-- [ ] Completar en las dos páginas los apellidos de Juan, Annael y Raúl, y la trayectoria de Annael y Raúl. Están marcados entre corchetes con la clase `pending`.
 - [ ] Revisar la política de privacidad con un abogado.
 - [ ] Confirmar que `hola@enclaveia.cl` recibe correos.
 - [ ] Reemplazar el ejemplo de la portada por una salida real del prototipo.
