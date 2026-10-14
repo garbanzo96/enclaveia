@@ -22,9 +22,10 @@ Las rutas internas son relativas, así que el sitio funciona igual en enclaveia.
 | `sitio/en/index.html` | Página en inglés |
 | `sitio/privacidad.html`, `sitio/en/privacy.html` | Política de privacidad |
 | `sitio/marca/` | Guía de marca en enclaveia.cl/marca (no se indexa) |
-| `sitio/assets/site.css` | Todos los estilos: colores, tipografía y retícula |
-| `sitio/assets/site.js` | El ejemplo interactivo y el botón de copiar correo |
-| `sitio/assets/fonts/` | Newsreader y Public Sans en WOFF2, con sus licencias OFL |
+| `sitio/assets/portada.css` | Estilos de las dos portadas: colores, tipografía y retícula de 6 columnas |
+| `sitio/assets/site.css` | Estilos del diseño anterior, que todavía usan la política de privacidad, la 404 y la guía de marca |
+| `sitio/assets/site.js` | Los acordeones de respaldo, el ejemplo interactivo, el diagrama que se resalta y el botón de copiar correo |
+| `sitio/assets/fonts/` | Newsreader (normal y cursiva), Public Sans e IBM Plex Mono en WOFF2, con sus licencias OFL |
 | `sitio/assets/marca/` | Logotipo e isotipo en SVG (color, negativo y una tinta) |
 | `sitio/_headers` | Cabeceras de seguridad para Cloudflare Pages |
 | `marca/` | Generadores del isotipo y del logotipo en Python |
@@ -44,6 +45,7 @@ Los enlaces internos apuntan a archivos `.html`; Cloudflare Pages los redirige a
 - [ ] Revisar la política de privacidad con un abogado.
 - [ ] Confirmar que `hola@enclaveia.cl` recibe correos.
 - [ ] Reemplazar el ejemplo de la portada por una salida real del prototipo.
+- [ ] Reemplazar los marcadores de fotografía (hero, «Cómo trabajamos», «Formación») y los cinco retratos del equipo.
 - [ ] Buscar «Enclave» en INAPI, en las clases 9, 35, 41 y 42.
 - [ ] No activar Bot Fight Mode ni Web Analytics de Cloudflare. Si se activan, Cloudflare puede instalar una cookie técnica (`__cf_bm`) y hay que corregir la frase «no usa cookies» del pie y de la política de privacidad.
 
@@ -51,18 +53,18 @@ Los enlaces internos apuntan a archivos `.html`; Cloudflare Pages los redirige a
 
 - Los textos están en `sitio/index.html` y `sitio/en/index.html`. Cuando se cambia uno hay que cambiar el otro.
 - Al modificar contenido, se actualiza la fecha de «Última revisión» del pie en ambas páginas y la fecha de `sitio/sitemap.xml`.
-- El logotipo va incrustado en el HTML como SVG para que cambie de color en modo oscuro. Su trazado no se edita a mano: se regenera (ver abajo).
-- La política de seguridad (`_headers`) no admite estilos ni scripts en línea. Los estilos van en `site.css` y el código en `site.js`.
+- Las portadas llevan la marca como texto («Enclave IA» en Newsreader), según el diseño. En la política de privacidad, la 404 y la guía de marca el logotipo va incrustado como SVG. Su trazado no se edita a mano: se regenera (ver abajo).
+- La política de seguridad (`_headers`) no admite estilos ni scripts en línea. Los estilos van en `portada.css` (portadas) o `site.css` (demás páginas) y el código en `site.js`.
 - La marca se escribe siempre «Enclave IA», también en inglés. Nunca «Enclave AI», que es el nombre de otra empresa del rubro.
 
 ## Decisiones de diseño
 
-- **Un solo acento.** El azul tinta (#1F3FA6) solo aparece en la dovela, los enlaces y la acción principal.
-- **Dos familias tipográficas.** Newsreader para titulares y Public Sans para texto.
-- **Retícula de 12 columnas.** El espaciado usa múltiplos de 8 px.
-- **Contraste AA.** El texto más claro marca 5,2:1 sobre el fondo.
+- **Dos acentos con función.** El verde petróleo (#1F5F5B) marca lo interactivo y las etiquetas. El verde lima (#D4ED5C) marca lo que importa: vacíos, aprobación, cifras y la acción principal.
+- **Tres familias tipográficas.** Newsreader para titulares, Public Sans para texto e IBM Plex Mono para etiquetas, datos y botones.
+- **Retícula de 6 columnas** de 24 px de separación, con un ancho máximo de 1440 px.
+- **Contraste AA.** El texto más claro marca 6:1 sobre el fondo.
 - **Nada de terceros.** No hay cookies, analítica ni solicitudes a otros dominios: las fuentes se alojan en el propio sitio.
-- **Peso total:** cerca de 450 KB, de los cuales 110 KB son fuentes.
+- **Sin modo oscuro automático.** La portada es clara, con una franja oscura para los pilotos.
 - **Afirmaciones con fuente.** Las cifras llevan su fuente en notas al pie.
 
 La guía de marca completa está en `sitio/marca/index.html`.
@@ -80,4 +82,4 @@ rm sitio/assets/marca/logo-data.json  # datos intermedios para incrustar el logo
 
 ## Licencias
 
-Newsreader y Public Sans se distribuyen con la SIL Open Font License 1.1; las licencias están en `sitio/assets/fonts/`. Los textos, el logotipo y el código son © 2026 Synesis Lab SpA.
+Newsreader, Public Sans e IBM Plex Mono se distribuyen con la SIL Open Font License 1.1; las licencias están en `sitio/assets/fonts/`. Los textos, el logotipo y el código son © 2026 Synesis Lab SpA.
