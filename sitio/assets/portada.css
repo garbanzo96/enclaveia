@@ -312,17 +312,8 @@ details[open] > .acc .acc-sign::before { content: "\2212"; }
 }
 .fig-caption { font-size: 15px; line-height: 1.5; color: var(--ink-2); }
 .fig svg { overflow: visible; }
-.fig-wide svg { width: 440px; max-width: 100%; height: auto; margin: 0 auto; }
-.fig-narrow { display: none; }
-.fig-narrow > p { margin-top: 20px; font-size: 15px; color: var(--ink-2); }
-.chips {
-  display: flex; flex-wrap: wrap; align-items: center; gap: 8px;
-  font-family: var(--mono); font-size: 12px; letter-spacing: 0.05em; text-transform: uppercase;
-}
-.chips .chip { padding: 10px 12px; border: 1px solid var(--ink); color: var(--ink); }
-.chips .chip.on { background: var(--green); border-color: var(--green); color: var(--paper); }
-.chips .arrow { color: var(--ink-3); }
-
+.fig-svg svg { width: 440px; max-width: 100%; height: auto; margin: 0 auto; }
+.fig-note { font-size: 15px; color: var(--ink-2); }
 /* Diagramas (SVG) */
 .diagram text {
   font-family: var(--mono); font-size: 12px; letter-spacing: 0.05em; text-transform: uppercase;
@@ -396,10 +387,9 @@ details[open] > .acc .acc-sign::before { content: "\2212"; }
 .start { margin-top: 96px; }
 .start .kicker { color: var(--green-light); }
 .flow-wide svg { width: 1200px; max-width: 100%; height: auto; margin: -24px auto 0; }
-.flow-narrow { display: none; margin-top: 32px; }
-.flow-narrow p { margin-top: 20px; font-size: 15px; color: var(--on-dark-2); }
-.flow-narrow .chips .chip { border-color: var(--paper); color: var(--paper); }
-.flow-narrow .chips .arrow { color: var(--green-light); }
+.flow-tall { display: none; margin-top: 32px; }
+.flow-tall svg { width: 440px; max-width: 100%; height: auto; margin: 0 auto; }
+.flow-tall p { margin-top: 24px; font-size: 15px; color: var(--on-dark-2); }
 .dark .diagram text { fill: var(--paper); }
 .dark .diagram .lines path { stroke: var(--paper); }
 .dark .diagram marker path { fill: var(--paper); }
@@ -424,13 +414,9 @@ details[open] > .acc .acc-sign::before { content: "\2212"; }
 .foot-col { display: flex; flex-direction: column; gap: 6px; }
 
 /* Tablet y móvil */
-@media (max-width: 1247px) {
-  .flow-wide { display: none; }
-  .flow-narrow { display: block; }
-}
 @media (max-width: 999px) {
-  .fig-wide { display: none; }
-  .fig-narrow { display: block; }
+  .flow-wide { display: none; }
+  .flow-tall { display: block; }
 }
 @media (max-width: 900px) {
   .grid-6, .grid-5, .grid-4, .grid-3 { grid-template-columns: minmax(0, 1fr); }

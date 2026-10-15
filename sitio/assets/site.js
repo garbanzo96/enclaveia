@@ -50,8 +50,7 @@
     var nodes = fig.querySelectorAll('[data-stage]');
     var caption = fig.querySelector('[data-fig-caption]');
     var diagrams = fig.querySelectorAll('[data-fig-label]');
-    var names = [];
-    fig.querySelectorAll('.chip[data-stage]').forEach(function (c) { names[+c.getAttribute('data-stage')] = c.textContent; });
+    var names = fig.getAttribute('data-stages').split('|');
     var fill = function (tpl, vars) {
       return tpl.replace(/\{(\w+)\}/g, function (_, k) { return vars[k]; });
     };
@@ -63,7 +62,6 @@
       nodes.forEach(function (n) {
         var active = !!on[n.getAttribute('data-stage')];
         n.classList.toggle('on', active);
-        if (n.tagName === 'LI') active ? n.setAttribute('aria-current', 'step') : n.removeAttribute('aria-current');
       });
       var vars = {};
       if (open) {
